@@ -1,4 +1,4 @@
-import FeedbackCounter from './components/FeedbackCounter';
+import FeedbackCounter from './components/FeedbackCounter/FeedbackCounter';
 
 export default function App() {
   return (

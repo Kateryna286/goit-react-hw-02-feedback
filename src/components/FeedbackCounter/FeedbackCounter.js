@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Statistics from './Statistics';
-import FeedbackOptions from './FeedbackOptions';
-import Section from './Section';
-import Notification from './Notification';
+import Statistics from '../Statistics/Statistics';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+import Section from '../Section/Section';
+import Notification from '../Notification/Notification';
 import style from './FeedbackCounter.module.css';
 
 class FeedbackCounter extends Component {
@@ -15,20 +15,17 @@ class FeedbackCounter extends Component {
   Options = Object.keys(this.state);
 
   onBtnClick = label => {
-    return this.setState(prevState => ({
+    this.setState(prevState => ({
       [label]: prevState[label] + 1,
     }));
   };
 
   countTotalFeedback = () => {
-    const Total = this.state.good + this.state.neutral + this.state.bad;
-    return Total;
+    return this.state.good + this.state.neutral + this.state.bad;
   };
 
   countPositiveFeedbackPercentage = () => {
-    const Total = this.countTotalFeedback();
-    const Percentage = (this.state.good / Total) * 100;
-    return Math.round(Percentage);
+    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
   render() {
