@@ -1,0 +1,13 @@
+.list {
+  padding: 0;
+  font-size: 18px;
+}
+
+.itemText {
+  font-weight: 600;
+  margin-right: 15px;
+}
+
+.item {
+  margin-bottom: 5px;
+}

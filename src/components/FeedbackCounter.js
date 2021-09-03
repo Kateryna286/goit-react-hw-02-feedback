@@ -3,8 +3,7 @@ import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
 import Section from './Section';
 import Notification from './Notification';
-import './FeedbackCounter.css';
-//import PropTypes from 'prop-types';
+import style from './FeedbackCounter.module.css';
 
 class FeedbackCounter extends Component {
   state = {
@@ -34,7 +33,7 @@ class FeedbackCounter extends Component {
 
   render() {
     return (
-      <div>
+      <div className={style.container}>
         <Section title="Please, leave feedback">
           <FeedbackOptions
             option={this.Options}
